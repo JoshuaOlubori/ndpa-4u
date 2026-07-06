@@ -51,11 +51,25 @@ function toRoutePath(filePath) {
   return "/" + clean;
 }
 
+// Falls back to a Title Case version of the filename slug when a page has
+// no frontmatter title — mirrors how Nuxt Content derives titles by default.
+function humanizeSlug(slug) {
+  return slug
+    .split("-")
+    .filter(Boolean)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
 function cleanMarkdown(raw) {
-  // strip MDC component markers (::card-group, :::card, etc.) - keep the prose
   return raw
     .split("\n")
-    .filter((line) => !/^:{2,}/.test(line.trim()))
+    .filter((line) => {
+      const trimmed = line.trim();
+      if (/^:{2,}/.test(trimmed)) return false; // ::component / :::card markers
+      if (/^#[a-zA-Z][\w-]*$/.test(trimmed)) return false; // #title, #description, #links slot names
+      return true;
+    })
     .join("\n");
 }
 
@@ -160,19 +174,22 @@ async function main() {
     }
 
     const { data: frontmatter, content } = matter(raw);
+    const lastSegment = routePath.split("/").filter(Boolean).pop() || "";
+    const pageTitle = frontmatter.title || humanizeSlug(lastSegment);
+
     const cleaned = cleanMarkdown(content);
     const chunks = chunkMarkdown(cleaned).filter((c) => c.text.length >= 20);
 
     await sql`DELETE FROM doc_embeddings WHERE path = ${routePath}`;
 
     for (const chunk of chunks) {
-      const textForEmbedding = `${frontmatter.title || ""}\n${chunk.heading || ""}\n${chunk.text}`;
+      const textForEmbedding = `${pageTitle}\n${chunk.heading || ""}\n${chunk.text}`;
       const vector = await embed(textForEmbedding, "RETRIEVAL_DOCUMENT");
       const vectorLiteral = `[${vector.join(",")}]`;
 
       await sql`
         INSERT INTO doc_embeddings (path, title, heading, content, embedding)
-        VALUES (${routePath}, ${frontmatter.title || ""}, ${chunk.heading || frontmatter.title || ""}, ${chunk.text}, ${vectorLiteral}::vector)
+        VALUES (${routePath}, ${pageTitle}, ${chunk.heading || pageTitle}, ${chunk.text}, ${vectorLiteral}::vector)
       `;
       await sleep(120); // stay comfortably under embedding rate limits
     }
