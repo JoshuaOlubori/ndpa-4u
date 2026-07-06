@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "create-docs": {
+      "source": "nuxt-content/docus",
+      "sourceType": "github",
+      "skillPath": "docs/skills/create-docs/SKILL.md",
+      "computedHash": "9bc807398241eb7eeb9bb5f356cac3297fe6323666c4b6edc9cbefb51c527376"
+    }
+  }
+}
