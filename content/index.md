@@ -1,123 +1,116 @@
 ---
 seo:
-  title: Write beautiful docs with Markdown
-  description: Ship fast, flexible, and SEO-optimized documentation with beautiful
-    design out of the box. Docus brings together the best of the Nuxt ecosystem.
-    Powered by Nuxt UI.
+  title: Nigeria Data Protection Act, 2023
+  description: A digital, accessible version of the Nigeria Data Protection Act (NDPA), 2023.
 ---
 
 ::u-page-hero
 #title
-Write beautiful docs with Markdown
+Nigeria Data Protection Act, 2023
 
 #description
-Ship fast, flexible, and SEO-optimized documentation with beautiful design out of the box.
+Welcome to the digital version of the **NDPA 2023**. This platform provides an accessible, searchable, and modern interface to explore the legal framework protecting personal information in Nigeria.
 
-Docus brings the best of the Nuxt ecosystem into one CLI.
+Now with [built-in AI assistant]{.text-primary} to ask questions about the Act in natural language.
 
 #links
   :::u-button
   ---
-  color: neutral
+  color: primary
   size: xl
-  to: /getting-started/installation
+  to: /01-objectives-and-application/objectives
   trailing-icon: i-lucide-arrow-right
   ---
-  Get started
+  Start Reading
   :::
 
   :::u-button
   ---
   color: neutral
-  icon: simple-icons-github
+  icon: i-lucide-external-link
   size: xl
-  to: https://github.com/nuxt-content/docus
+  to: https://ndpc.gov.ng
+  variant: outline
+  target: _blank
+  ---
+  Official site
+  :::
+
+#headline
+  :::u-button
+  ---
+  size: sm
+  to: #
   variant: outline
   ---
-  Star on GitHub
+  Gazetted June 2023
   :::
 ::
 
 ::u-page-section
-#title
-Shipped with many features
+  :::u-page-grid
+    ::::u-page-card
+    ---
+    spotlight: true
+    class: col-span-2 md:col-span-1
+    to: /01-objectives-and-application/objectives
+    ---
+    #title
+    Objectives & Application
 
-#features
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-nuxt
-  target: _blank
-  to: https://nuxt.com
-  ---
-  #title
-  Built with [Nuxt 4]{.text-primary}
-  
-  #description
-  Optimized by the most famous Vue framework. Docus gives you everything you need to build fast, performant, and SEO-friendly websites.
-  :::
+    #description
+    Understand the fundamental goals of the Act, the scope of its authority, and the specific entities and data processing activities it governs within and outside Nigeria.
+    ::::
 
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-nuxt
-  target: _blank
-  to: https://ui.nuxt.com/
-  ---
-  #title
-  Powered by [Nuxt UI]{.text-primary}
-  
-  #description
-  Beautiful out of the box, minimal by design but highly customizable. Docus leverages Nuxt UI to give you the best docs writing experience with zero boilerplate, just focus on your content.
-  :::
+    ::::u-page-card
+    ---
+    spotlight: true
+    class: col-span-2 md:col-span-1
+    to: /06-rights-of-data-subjects/34-rights
+    ---
+    #title
+    Rights of Data Subjects
 
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-nuxt
-  target: _blank
-  to: https://content.nuxt.com
-  ---
-  #title
-  Enhanced Markdown syntax by [Nuxt Content]{.text-primary}
-  
-  #description
-  The only thing you need to take care about is writing your content. Write your pages in Markdown and extend with MDC syntax to embed Nuxt UI or custom Vue components. Structure, routing, and rendering are handled for you.
-  :::
+    #description
+    Every citizen has rights regarding their data. Learn about the right to access, rectification, erasure, and the right to object to automated decision-making.
+    ::::
 
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-nuxt
-  target: _blank
-  to: https://nuxt.com/docs/guide/directory-structure/app-config
-  ---
-  #title
-  Customize with [Nuxt App Config]{.text-primary}
-  
-  #description
-  Update colors, social links, header logos and component styles globally using the `app.config.ts`, no direct code modifications required.
-  :::
+    ::::u-page-card
+    ---
+    spotlight: true
+    class: col-span-2 md:col-span-1
+    to: /07-data-security/39-security-measures
+    ---
+    #title
+    Data Security
 
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-nuxt
-  target: _blank
-  to: https://content.nuxt.com/studio
-  ---
-  #title
-  Edit in production with [Nuxt Studio]{.text-primary}
-  
-  #description
-  Edit your content in production with zero Markdown knowledge required. Let your non technical colleagues collaborate on the documentation and integrate Vue components without code skills.
-  :::
+    #description
+    Explore the rigorous requirements for security, integrity, and confidentiality that data controllers must implement to protect against unauthorized access.
+    ::::
 
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-nuxt
-  target: _blank
-  to: https://ui.nuxt.com/components/content-search
-  ---
-  #title
-  Built-in navigation and [full-text search]{.text-primary}
-  
-  #description
-  Only focus on ordering your content, Docus handles the search modal and auto-generates the side navigation for you.
+    ::::u-page-card
+    ---
+    spotlight: true
+    class: col-span-2 md:col-span-1
+    to: /10-enforcement/46-complaints-investigations
+    ---
+    #title
+    Enforcement
+
+    #description
+    Detailed information on the Nigeria Data Protection Commission (NDPC) powers, including complaints procedures, investigations, and statutory penalties.
+    ::::
+
+    ::::u-page-card
+    ---
+    spotlight: true
+    class: col-span-2
+    ---
+    #title
+    The Commission (NDPC)
+    
+    #description
+    The Act establishes the **Nigeria Data Protection Commission**, replacing the NDPB. It serves as the independent regulatory body overseeing data protection compliance across the federation.
+    ::::
   :::
 ::
