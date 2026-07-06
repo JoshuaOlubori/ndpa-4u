@@ -50,12 +50,14 @@ export default defineEventHandler(async (event) => {
     console.error('[chat] Retrieval failed, answering without context:', err)
   }
 
-  const systemInstruction = contextBlock
-    ? `You are a helpful assistant embedded in a documentation site. Answer the user's question using the documentation excerpts below whenever they're relevant. If the excerpts don't cover the question, say so honestly instead of guessing. Reference which source(s) informed your answer by path.
+const systemInstruction = contextBlock
+  ? `You are a helpful assistant embedded in a documentation site. Answer the user's question using the documentation excerpts below whenever they're relevant. If the excerpts don't cover the question, say so honestly instead of guessing.
+
+When you cite a source, format it as a Markdown link using the page title as the link text and its path as the href — for example: [Code Blocks](/essentials/code-blocks). Never wrap the path in backticks or plain text.
 
 DOCUMENTATION EXCERPTS:
 ${contextBlock}`
-    : 'You are a helpful assistant embedded in a documentation site. Answer clearly and concisely.'
+  : 'You are a helpful assistant embedded in a documentation site. Answer clearly and concisely.'
 
   const contents = messages.map(m => ({
     role: m.role === 'assistant' ? 'model' : 'user',
