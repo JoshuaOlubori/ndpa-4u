@@ -1,5 +1,5 @@
 {
-  "name": "docus-starter",
+  "name": "NDPA-4U",
   "scripts": {
     "dev": "nuxt dev",
      "build": "node scripts/generate-embeddings.mjs && nuxt build",
