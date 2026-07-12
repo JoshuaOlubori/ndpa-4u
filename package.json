@@ -18,5 +18,8 @@
     "docus": "latest",
     "gray-matter": "^4.0.3",
     "nuxt": "^4.4.8"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
   }
 }
