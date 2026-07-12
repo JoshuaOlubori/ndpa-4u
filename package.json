@@ -2,7 +2,7 @@
   "name": "NDPA-4U",
   "scripts": {
     "dev": "nuxt dev",
-     "build": "node scripts/generate-embeddings.mjs && nuxt build",
+    "build": "node scripts/generate-embeddings.mjs && nuxt build",
     "embeddings": "node scripts/generate-embeddings.mjs"
   },
   "dependencies": {
@@ -12,6 +12,7 @@
     "@comark/nuxt": "^0.5.0",
     "@google/genai": "^2.10.0",
     "@neondatabase/serverless": "^1.1.0",
+    "@vercel/analytics": "^2.0.1",
     "ai": "^7.0.15",
     "better-sqlite3": "^12.11.1",
     "docus": "latest",
@@ -19,4 +20,3 @@
     "nuxt": "^4.4.8"
   }
 }
-
